@@ -21,6 +21,9 @@ ext {
             mapStructProcessor     : "org.mapstruct:mapstruct-processor:$versions.mapStruct",
             springOpenFeign        : "org.springframework.cloud:spring-cloud-starter-openfeign:$versions.springCloud",
             javaJwt                : "com.auth0:java-jwt:$versions.jwt",
+            mongoDb :"org.springframework.boot:spring-boot-starter-data-mongodb:$versions.springBoot",
+            springOpenFeign        : "org.springframework.cloud:spring-cloud-starter-openfeign:$versions.springCloud",
+
     ]
 
 }

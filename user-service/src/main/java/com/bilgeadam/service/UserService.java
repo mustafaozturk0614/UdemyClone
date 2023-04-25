@@ -10,6 +10,7 @@ import com.bilgeadam.utility.ServiceManager;
 import org.springframework.stereotype.Service;
 
 import java.util.HashSet;
+import java.util.Optional;
 
 @Service
 public class UserService extends ServiceManager<User,Long> {
@@ -27,5 +28,28 @@ public class UserService extends ServiceManager<User,Long> {
         user.getRoles().add(ERole.STUDENT);
         save(user);
         return IUserMapper.INSTANCE.toRegisterResponseDto(user);
+    }
+
+    public Boolean addRole(Long id) {
+      Optional<User> user=findById(id);
+      if (user.isEmpty()){
+          return  false;
+      }else{
+          user.get().getRoles().add(ERole.TEACHER);
+          update(user.get());
+          return  true;
+      }
+    }
+
+    public Boolean isTeacher(Long id) {
+        Optional<User> user=findById(id);
+        if (user.isPresent()){
+            if (user.get().getRoles().contains(ERole.TEACHER)){
+                return  true;
+            }
+
+        }
+
+        return  false;
     }
 }

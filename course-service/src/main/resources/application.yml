@@ -1,14 +1,12 @@
 server:
-  port: 9091
+  port: 8091
 
 spring:
-  datasource:
-    driver-class-name: org.postgresql.Driver
-    username: postgres
-    password: root
-    url:
-  jpa:
-    hibernate:
-      ddl-auto: update
-    show-sql: true
+  data:
+    mongodb:
+      host: localhost
+      port: 27020
+      username: java7user
+      password: root
+      database: coursedb
 

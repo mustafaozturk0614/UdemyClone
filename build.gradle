@@ -47,6 +47,7 @@ allprojects {
         implementation libs.springBootValidation
         implementation libs.springOpenFeign
         implementation libs.javaJwt
+        implementation libs.springOpenFeign
     }
 
 }
